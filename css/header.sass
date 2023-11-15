@@ -2,6 +2,10 @@
 
 .header
 
+    .max-width-wrapper:nth-child(2)
+        border-top: 1px solid #E2E4F0
+        background: white
+
     .header__layout
         margin: 0px 20px
 
@@ -126,7 +130,8 @@
 
                     svg
                         path
-                            fill: white !important
+                            @include desktop-small
+                                fill: white !important
 
                     .header__layout__top__phone__content
                         display: flex
@@ -187,18 +192,19 @@
                     .visible
                         opacity: 1
 
+    .header__bottom__layout
+        width: 100%
         .header__layout__bottom
-            border-top: 1px solid #E2E4F0
             padding: 23px
             transition: 0.3s ease
-            background: #FBFBFC
 
             @include desktop-small
                 position: absolute
                 left: -1000px
                 width: 100%
                 padding: 0px 20px
-                height: 100%
+                background: #FBFBFC
+                min-height: 100%
 
             .header__layout__bottom__items
                 display: flex
