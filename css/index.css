@@ -1,0 +1,5 @@
+.main .main-banner img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=index.css.map */

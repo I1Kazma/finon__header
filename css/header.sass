@@ -1,0 +1,454 @@
+@import 'style'
+
+.header
+
+    .header__layout
+        margin: 0px 20px
+
+        .header__layout__top
+            padding: 32px 0px 35px
+            display: flex
+            gap: 10px
+            justify-content: space-between
+            align-items: center
+
+            .header__layout__top__address
+                display: flex
+                gap: 10px
+                align-items: center
+
+                @media (max-width: 1125px)
+                    display: none
+
+                .header__layout__top__address__content
+                    display: Flex
+                    flex-direction: column
+                    font-size: 15px
+                    font-weight: 400
+                    line-height: 150%
+                    max-width: 248px
+
+            .header__layout__top__mail
+                display: flex
+                gap: 8px
+                max-width: 150px
+
+                @include desktop-small
+                    display: none
+
+                div
+                    display: flex
+                    gap: 5px
+                    flex-direction: column
+
+                    h5
+                        color: $light-blue
+                        font-size: 15px
+                        font-weight: 400
+                    span
+                        font-size: 15px
+                        font-weight: 400
+
+            .header__layout__top__social-links
+                display: flex
+                gap: 5px
+                width: 100%
+                max-width: 205px
+                max-height: 40px
+                justify-content: space-between
+
+                @include mobile-big
+                    display: none
+
+                .social-link
+                    border-radius: 100px
+                    padding: 10px
+                    display: flex
+                    transition: 0.3s ease
+                    overflow: hidden
+
+                    img
+                        position: relative
+                        z-index: 1
+
+                .vk
+                    background: #1976D2
+                    &:hover
+                        background: #1862AB
+
+                .instagram
+                    position: relative
+                    background: linear-gradient(44deg, #EF9033 16.16%, #F13459 50.11%, #E329BC 83.68%)
+
+                    &::after
+                        content: ''
+                        position: absolute
+                        background-image: linear-gradient(44deg, #CD7825 16.16%, #C72847 50.11%, #C824A6 83.68%)
+                        opacity: 0
+                        left: 0px
+                        top: 0px
+                        right: 0px
+                        bottom: 0px
+                        transition: 0.3s ease
+
+                    &:hover::after
+                        opacity: 1
+
+                .whatsapp
+                    background: #43D854
+                    &:hover
+                        background: #36B544
+
+                .telegram
+                    background: #039BE5
+                    padding: 10px 12px 10px 8px
+                    &:hover
+                        background: #0488C8
+
+            .header__layout__top__phone
+                &:hover
+                    @include desktop-small
+                        a
+                            background: $blue-hover
+
+                @include desktop-small
+                    order: -1
+                a
+                    display: flex
+                    gap: 10px
+                    align-items: center
+                    transition: 0.3s ease
+
+                    @include desktop-small
+                        padding: 12px
+                        background: $light-blue
+                        border-radius: 8px
+
+                    svg
+                        path
+                            fill: white !important
+
+                    .header__layout__top__phone__content
+                        display: flex
+                        flex-direction: column
+                        gap: 2px
+
+                        @include desktop-small
+                            display: none
+
+                        h4
+                            font-size: 22px
+                            font-weight: 700
+                            line-height: 140%
+                            color: $black
+
+                        span
+                            font-size: 14px
+                            color: $light-blue
+                            font-weight: 400
+                            line-height: 140%
+                            color: $light-blue
+                            text-align: end
+
+            .header__layout__top__hamburger
+                display: none
+
+                &:hover
+                    .header__layout__top__hamburger__wrapper
+                        background: $blue-hover
+
+                @include desktop-small
+                    display: flex
+                    max-height: 48px
+
+                .header__layout__top__hamburger__wrapper
+                    padding: 12px
+                    background: $light-blue
+                    border-radius: 8px
+                    transition: 0.3s ease
+                    cursor: pointer
+                    position: relative
+
+                    @include desktop-small
+                        width: 48px
+                        height: 48px
+
+                    .close, .hamburger
+                        position: absolute
+                        left: 12px
+                        top: 12px
+
+                    .visible
+                        opacity: 1
+
+                    .unvisible
+                        opacity: 0
+
+                    .visible
+                        opacity: 1
+
+        .header__layout__bottom
+            border-top: 1px solid #E2E4F0
+            padding: 23px
+            transition: 0.3s ease
+            background: #FBFBFC
+
+            @include desktop-small
+                position: absolute
+                left: -1000px
+                width: 100%
+                padding: 0px 20px
+                height: 100%
+
+            .header__layout__bottom__items
+                display: flex
+                justify-content: space-between
+                position: relative
+
+                @include desktop-small
+                    flex-direction: column
+
+                .header__layout__bottom__item
+
+                    .header__layout__bottom__item__title
+                        display: flex
+                        gap: 6px
+                        align-items: center
+                        font-size: 15px
+                        color: $black
+                        font-weight: 700
+                        line-height: 150%
+                        transition: 0.3s ease
+
+                        @include desktop-small
+                            padding: 24px 0px
+                            border-bottom: 1px solid #E7ECF3
+
+                        img
+                            transform: rotate(180deg)
+                            transition: 0.3s ease
+
+                    &:hover
+                        a
+                            span
+                                color: $blue-hover
+
+                        .header__layout__bottom__item__submenu
+                            max-height: 350px
+
+                            @include desktop-small
+                                max-height: 0px
+                                /*max-height: 730px*/
+
+                    .header__layout__bottom__item__submenu
+                        max-height: 0px
+                        overflow: hidden
+                        transition: 0.3s ease
+                        position: absolute
+
+                        @include desktop-small
+                            position: relative
+                            border-bottom: 1px solid #E7ECF3
+                            margin-top: -1px
+
+                        .header__layout__bottom__item__submenu__wrapper
+                            padding: 30px 50px
+                            border-radius: 16px
+                            border: 1px solid #EFEFEF
+                            background: #FFF
+                            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05), 0px 30px 30px -15px rgba(0, 0, 0, 0.05)
+                            margin-top: 20px
+
+                            display: grid
+                            grid-template-columns: repeat(auto-fit, minmax(229px, auto))
+                            justify-content: space-between
+                            column-gap: 79px
+                            row-gap: 0px
+                            max-width: 816px
+
+                            @include desktop-small
+                                display: flex
+                                flex-direction: column
+                                border: none
+                                margin-top: 0px
+                                border-radius: 0px
+                                max-width: none
+                                padding: 20px 30px
+
+                            li
+                                a
+                                    font-size: 15px
+                                    font-weight: 400
+                                    line-height: 36px
+                                    transition: 0.3s ease
+                                    color: $grey
+
+                                &:hover
+                                    a
+                                        color: $blue-hover
+
+            .header__layout__bottom__info
+                display: none
+                padding: 40px 0px
+
+                @include desktop-small
+                    display: flex
+                    justify-content: space-between
+                    gap: 20px
+
+                @include tablet
+                    display: grid
+                    grid-template-columns: repeat(2, minmax(100px, 330px))
+
+                @include mobile-big
+                    padding: 30px 0px
+                    display: grid
+                    grid-template-columns: repeat(2, minmax(100px, 241px))
+                    grid-column-gap: 30px
+                    grid-row-gap: 30px
+
+                @include mobile
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+                    grid-row-gap: 20px
+
+                li
+                    @include mobile
+                        grid-area: auto !important
+
+                .header__layout__bottom__info__address, .header__layout__bottom__info__contacts
+
+                    a
+                        border-radius: 16px
+                        border: 1px solid var(--color-02, #EFEFEF)
+                        padding: 30px
+                        display: flex
+                        gap: 20px
+                        background: white
+                        height: 100%
+                        align-items: center
+
+                        @include mobile-big
+                            padding: 20px
+                            gap: 10px
+                            flex-direction: column
+
+                        span
+                            font-size: 15px
+                            color: $black
+                            font-weight: 400
+                            line-height: 140%
+
+                .header__layout__bottom__info__address
+                    @include tablet
+                        a
+                            flex-direction: column
+                            align-items: flex-start
+
+                    @include mobile-big
+                        grid-area: 1 / 1 / 2 / 3
+
+                .header__layout__bottom__info__contacts
+
+                    @include mobile-big
+                        grid-area: 2 / 1 / 3 / 2
+
+                    a
+                        flex-direction: column
+                        align-items: flex-start
+                        justify-content: center
+
+                    .header__layout__bottom__info__contacts__mail
+                        display: flex
+                        gap: 20px
+
+                        @include mobile-big
+                            flex-direction: column
+                            align-items: flex-start
+                            gap: 10px
+
+                    .header__layout__bottom__info__contacts__time
+                        display: none
+
+                        @include tablet
+                            display: Flex
+                            gap: 20px
+
+                        @include mobile-big
+                            display: none
+
+                .header__layout__bottom__info__time
+                    display: none
+
+                    @include mobile-big
+                        display: flex
+                        grid-area: 2 /2 / 3 / 2
+
+                    .header__layout__bottom__info__time__wrapper
+                        padding: 20px
+                        display: flex
+                        gap: 10px
+                        flex-direction: column
+                        align-items: flex-start
+                        border-radius: 16px
+                        border: 1px solid #EFEFEF
+                        background: #FFF
+                        width: 100%
+
+            .header__layout__bottom__social-links
+                display: none
+
+                @include mobile-big
+                    display: flex
+                    gap: 5px
+                    width: 100%
+                    max-width: 298px
+                    justify-content: space-between
+                    padding-bottom: 80px
+
+                @include mobile
+                    max-width: none
+
+                .social-link
+                    border-radius: 100px
+                    padding: 16px
+                    display: flex
+                    transition: 0.3s ease
+                    overflow: hidden
+
+                    img
+                        position: relative
+                        z-index: 1
+
+                .vk
+                    background: #1976D2
+                    &:hover
+                        background: #1862AB
+
+                .instagram
+                    position: relative
+                    background: linear-gradient(44deg, #EF9033 16.16%, #F13459 50.11%, #E329BC 83.68%)
+
+                    &::after
+                        content: ''
+                        position: absolute
+                        background-image: linear-gradient(44deg, #CD7825 16.16%, #C72847 50.11%, #C824A6 83.68%)
+                        opacity: 0
+                        left: 0px
+                        top: 0px
+                        right: 0px
+                        bottom: 0px
+                        transition: 0.3s ease
+
+                    &:hover::after
+                        opacity: 1
+
+                .whatsapp
+                    background: #43D854
+                    &:hover
+                        background: #36B544
+
+                .telegram
+                    background: #039BE5
+                    padding: 16px 18px 16px 14px
+                    &:hover
+                        background: #0488C8

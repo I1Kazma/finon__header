@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*Цвета проекта*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-opened {
+  overflow-y: hidden;
+}
+
+.opened {
+  left: 0px !important;
+}
+
+.submenu-opened {
+  max-height: 730px !important;
+}
+
+.rotate {
+  transform: rotate(360deg) !important;
+}
+
+.red {
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+}
+
+.max-width-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.width-wrapper {
+  max-width: 1182px;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

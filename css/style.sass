@@ -1,0 +1,65 @@
+/*Цвета проекта*/
+$light-blue: #3F5199
+$blue-hover: #5369C0
+$black: #18181A
+$grey: #585858
+
+$font: Arial, Helvetica, sans-serif
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
+    font-family: $font
+
+ul, ol
+    list-style-type: none
+
+a
+    text-decoration: none
+
+$desktop-small: 992px,
+$tablet: 768px,
+$mobile-big: 576px,
+$mobile: 380px
+
+@mixin desktop-small
+    @media (max-width: $desktop-small)
+        @content
+
+@mixin tablet
+    @media (max-width: $tablet)
+        @content
+
+@mixin mobile-big
+    @media (max-width: $mobile-big)
+        @content
+
+@mixin mobile
+    @media (max-width: $mobile)
+        @content
+
+.nav-opened
+    overflow-y: hidden
+
+.opened
+    left: 0px !important
+
+.submenu-opened
+    max-height: 730px !important
+
+.rotate
+    transform: rotate(360deg) !important
+
+.red
+    background-image: url("../img/arrow.svg")
+    background-repeat: no-repeat
+
+.max-width-wrapper
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+.width-wrapper
+    max-width: 1182px
+    width: 100%
